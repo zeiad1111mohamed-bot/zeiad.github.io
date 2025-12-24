@@ -37,7 +37,7 @@
     document.addEventListener('scroll', toggleScrollTop);
   }
 
-  // 4. AOS Animation (Safe Init)
+  // 4. AOS Animation
   function aosInit() {
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 600, easing: 'ease-in-out', once: true });
@@ -45,30 +45,41 @@
   }
   window.addEventListener('load', aosInit);
 
-  // 5. Typed.js (Safe Init)
+  // 5. Typed.js
   const selectTyped = document.querySelector('.typed');
   if (selectTyped && typeof Typed !== 'undefined') {
     let typed_strings = selectTyped.getAttribute('data-typed-items').split(',');
     new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
+      strings: typed_strings, loop: true, typeSpeed: 100, backSpeed: 50, backDelay: 2000
     });
   }
 
-  // 6. PureCounter (Safe Init)
+  // 6. PureCounter
   if (typeof PureCounter !== 'undefined') {
     new PureCounter();
   }
 
-  // 7. GLightbox (Safe Init)
+  // 7. Skills Animation (ده الجزء اللي بيملي الخطوط)
+  let skillsContent = document.querySelector('.skills-content');
+  if (skillsContent && typeof Waypoint !== 'undefined') {
+    new Waypoint({
+      element: skillsContent,
+      offset: '80%',
+      handler: function(direction) {
+        let progress = document.querySelectorAll('.progress .progress-bar');
+        progress.forEach(el => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%';
+        });
+      }
+    });
+  }
+
+  // 8. GLightbox
   if (typeof GLightbox !== 'undefined') {
     GLightbox({ selector: '.glightbox' });
   }
 
-  // 8. Swiper (Safe Init)
+  // 9. Init Swiper
   function initSwiper() {
     if (typeof Swiper !== 'undefined') {
       document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
@@ -79,7 +90,7 @@
   }
   window.addEventListener("load", initSwiper);
 
-  // 9. Navmenu Scrollspy
+  // 10. Navmenu Scrollspy
   let navmenulinks = document.querySelectorAll('.navmenu a');
   function navmenuScrollspy() {
     navmenulinks.forEach(navmenulink => {
