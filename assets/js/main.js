@@ -1,51 +1,23 @@
 (function() {
   "use strict";
 
-  // 1. Header toggle
+  // 1. إظهار الصفحة فوراً وإلغاء أي تعليقة
+  window.onload = function() {
+    document.body.style.opacity = "1";
+    document.body.style.visibility = "visible";
+  };
+
+  // 2. Header toggle
   const headerToggleBtn = document.querySelector('.header-toggle');
   if (headerToggleBtn) {
-    function headerToggle() {
+    headerToggleBtn.addEventListener('click', function() {
       document.querySelector('#header').classList.toggle('header-show');
-      headerToggleBtn.classList.toggle('bi-list');
-      headerToggleBtn.classList.toggle('bi-x');
-    }
-    headerToggleBtn.addEventListener('click', headerToggle);
-  }
-
-  // 2. Hide mobile nav on hash links
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
-        headerToggle();
-      }
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
     });
-  });
-
-  // 3. Scroll top button
-  let scrollTop = document.querySelector('.scroll-top');
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  if (scrollTop) {
-    scrollTop.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    window.addEventListener('load', toggleScrollTop);
-    document.addEventListener('scroll', toggleScrollTop);
   }
 
-  // 4. AOS Animation
-  function aosInit() {
-    if (typeof AOS !== 'undefined') {
-      AOS.init({ duration: 600, easing: 'ease-in-out', once: true });
-    }
-  }
-  window.addEventListener('load', aosInit);
-
-  // 5. Typed.js
+  // 3. Typed.js (الكلمات اللي بتتغير)
   const selectTyped = document.querySelector('.typed');
   if (selectTyped && typeof Typed !== 'undefined') {
     let typed_strings = selectTyped.getAttribute('data-typed-items').split(',');
@@ -54,59 +26,35 @@
     });
   }
 
-  // 6. PureCounter
-  if (typeof PureCounter !== 'undefined') {
-    new PureCounter();
-  }
-
-  // 7. Skills Animation (ده الجزء اللي بيملي الخطوط)
+  // 4. Skills Animation (ملء الخطوط)
   let skillsContent = document.querySelector('.skills-content');
   if (skillsContent && typeof Waypoint !== 'undefined') {
     new Waypoint({
-      element: skillsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = document.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
+      element: skillsContent, offset: '80%',
+      handler: function() {
+        document.querySelectorAll('.progress .progress-bar').forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
         });
       }
     });
   }
 
-  // 8. GLightbox
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({ selector: '.glightbox' });
-  }
-
-  // 9. Init Swiper
+  // 5. Swiper (المشاريع والشهادات)
   function initSwiper() {
     if (typeof Swiper !== 'undefined') {
-      document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-        let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
-        new Swiper(swiperElement, config);
+      document.querySelectorAll(".init-swiper").forEach(swiperElement => {
+        try {
+          let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
+          new Swiper(swiperElement, config);
+        } catch (e) { console.error("Swiper Config Error"); }
       });
     }
   }
-  window.addEventListener("load", initSwiper);
+  initSwiper(); // تشغيل فوري
 
-  // 10. Navmenu Scrollspy
-  let navmenulinks = document.querySelectorAll('.navmenu a');
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    });
+  // 6. GLightbox
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({ selector: '.glightbox' });
   }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
 
 })();
