@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,6 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Index - iPortfolio Bootstrap Template</title>
-  <base href="./">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -945,10 +945,7 @@
   <!-- Vendor JS Files --> 
   <!-- ^^^^ اتأكد إن الكود بتاعنا محطوط فوق السطر ده ^^^^ -->
   <!-- Preloader -->
-   <!-- رجعنا السطر ده بس خفيناه عشان الكود ميعطلش -->
-<!-- التعديل: إخفاء الشاشة ومنعها من حجب الضغط -->
-<div id="preloader" style="display: none !important; pointer-events: none !important; z-index: -9999;"></div>
-
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1041,33 +1038,6 @@
     </a>
 
   </div>
-
-
-  <!-- ============================================ -->
-  <!-- حل مشكلة اختفاء المحتوى (إجبار الظهور) -->
-  <!-- ============================================ -->
-  <style>
-    /* الكود ده بيلغي تأثير الاختفاء بتاع المكتبة البايظة */
-    [data-aos] {
-      opacity: 1 !important;
-      transform: none !important;
-      visibility: visible !important;
-      transition: none !important;
-    }
-
-    
-    /* ضمان إن الـ Hero يظهر */
-    .hero {
-        opacity: 1 !important;
-    }
-    /* إجبار العناصر على الظهور حتى لو الجافاسكريبت بايظ */
-    [data-aos] {
-      opacity: 1 !important;
-      transform: none !important;
-      visibility: visible !important;
-      pointer-events: auto !important; /* ده عشان الزراير تشتغل */
-    }
-  </style>
   <!-- ============================================ -->
 
 </body>
