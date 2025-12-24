@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Starter Page - iPortfolio Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Zeiad Mohamed</h1>
+    </a>
+
+<div class="social-links text-center">
+      <!-- منصة X (تويتر سابقاً) -->
+      <a href="https://x.com/zeiad_moha93?t=x6lhQEAciWEEiY4fwBci5g&s=09" class="twitter" target="_blank">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+
+      <!-- فيسبوك -->
+      <a href="https://www.facebook.com/share/1DNZkFzKAD/" class="facebook" target="_blank">
+        <i class="bi bi-facebook"></i>
+      </a>
+
+      <!-- انستجرام -->
+      <a href="https://www.instagram.com/zeiad_mohamed_eldeep?igsh=MTRnMWU4YXRoemRlNA==" class="instagram" target="_blank">
+        <i class="bi bi-instagram"></i>
+      </a>
+
+      <!-- لينكد إن -->
+      <a href="https://www.linkedin.com/in/zeiad-mohamed-5561a9350/" class="linkedin" target="_blank">
+        <i class="bi bi-linkedin"></i>
+      </a>
+    </div>
+<!-- كود القائمة الخاص بالصفحات الفرعية -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <!-- لاحظ إني زودت index.html قبل العلامة # -->
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#skills"><i class="bi bi-hdd-stack navicon"></i> Skills</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        
+        <!-- ده عشان يرجعك لقسم المشاريع المختارة في الرئيسية -->
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Featured Projects</a></li>
+
+        <!-- ده الزرار بتاع الصفحة اللي احنا فيها دلوقتي -->
+        <li><a href="projects.html" class="active"><i class="bi bi-collection-play navicon"></i> All Projects (15+)</a></li>
+        
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Starter Page</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Starter Page</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+<!-- قسم المشاريع كلها -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- العنوان -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>All Projects</h2>
+        <p>A complete archive of all my projects.</p>
+      </div>
+
+      <div class="container">
+
+        <!-- الفلاتر -->
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-desktop">Desktop / Python</li>
+            <li data-filter=".filter-web">Websites</li>
+          </ul>
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            
+
+            <!-- بداية بلوك المشروع (توماسسسسسسسسسسسسسسس) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/thomas/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>thomas System</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/thomas/1.jpg" title="thomas System" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="attal.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+  
+
+
+
+
+
+
+
+              <!-- بداية بلوك المشروع (العتالللللللللللل) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/python-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Attal System</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/python-1.jpg" title="attal System" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="cashier.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+              <!-- بداية بلوك المشروع (اندكسسسسسسسسسسسسسسسسسسسسس) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/index/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Index System</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/index/1.jpg" title="INDEX System" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="indexx.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+                        <!-- بداية بلوك المشروع سعيدددددددددددددددددددددددددا) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/said/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Web Site Almothada Steel</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/said/1.jpg" title="Websites" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="said.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+                  <!-- بداية بلوك المشروع هشاااااااااما) -->
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/hesham/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Nagfa Store</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/hesham/1.jpg" title="Websites" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="hesham.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+                          <!-- بداية بلوك المشروع (قراءننننننن) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/quran/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Quran Kareem</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/quran/1.jpg" title=" Quran Kareem " data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="quran.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+                                      <!-- بداية بلوك المشروع (ديشااااااااااااااااا) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/desha/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Desha</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/desha/1.jpg" title="Desha" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="desha.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+                                                  <!-- بداية بلوك المشروع (صيداليه) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/pharmacy/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Pharmacy</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/pharmacy/1.jpg" title="Pharmacy" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="pharmacy.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+                                                              <!-- بداية بلوك المشروع (محمد حسننن) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/mohamed/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Mohamed Hassan</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/mohamed/1.jpg" title="Mohamed Hassan" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="mohamed.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            
+                                                              <!-- بداية بلوك المشروع (عمر) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-desktop"> 
+              <div class="portfolio-content h-100">
+                <!-- صورة المشروع -->
+                <img src="assets/img/portfolio/OMAR/1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>OMAR</h4> <!-- اسم المشروع -->
+                  <p>Short Description</p>
+                  
+                  <!-- زرار التكبير -->
+                  <a href="assets/img/portfolio/OMAR/1.jpg" title="OMAR" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  
+                  <!-- زرار التفاصيل (ده اللي هيودينا لصفحة القصة) -->
+                  <a href="omar.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+<footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>
+          © <span>Copyright</span> 
+          <strong class="px-1 sitename">
+            <!-- رابط اسمك -->
+            <a href="https://www.facebook.com/groups/1081043667440741/?ref=share&mibextid=NSMWBT" target="_blank" style="color: inherit; text-decoration: none;">
+              Zeiad Mohamed
+            </a>
+          </strong> 
+          <span>All Rights Reserved</span>
+        </p>
+      </div>
+      <div class="credits">
+        <!-- رابط اسم الشركة -->
+        Powered by <a href="https://www.facebook.com/groups/1081043667440741/?ref=share&mibextid=NSMWBT" target="_blank">Codest  Company</a>
+      </div>
+    </div>
+    <style>
+    .mobile-bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0;
+      z-index: 999999;
+      border-top: 1px solid #eee;
+    }
+
+    @media (min-width: 992px) {
+      .mobile-bottom-nav {
+        display: none !important;
+      }
+    }
+
+    /* 👇👇 ده الجزء الجديد اللي بيرفع الفوتر 👇👇 */
+    @media (max-width: 992px) {
+      #footer {
+        padding-bottom: 80px !important; /* مسافة أمان تحت الكلام */
+      }
+    }
+    /* 👆👆 ------------------------------- 👆👆 */
+
+    .mobile-nav-item {
+      text-align: center;
+      color: #555;
+      text-decoration: none;
+      font-size: 10px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mobile-nav-item i {
+      font-size: 20px;
+      margin-bottom: 2px;
+      color: #149ddd;
+    }
+  </style>
+
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <!-- Scroll Top Button (مخفي) -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" style="display: none !important;"><i class="bi bi-arrow-up-short"></i></a>>
+
+  <!-- ============================================ -->
+  <!-- تحسين ظهور تفاصيل المشاريع (Hover Effect) -->
+  <!-- ============================================ -->
+  <style>
+    /* 1. تظبيط الحركة في الكمبيوتر */
+    .portfolio .portfolio-content .portfolio-info {
+      opacity: 0; /* مخفي في العادي */
+      position: absolute;
+      inset: 0; /* يغطي الصورة كلها */
+      z-index: 3;
+      transition: all 0.3s ease-in-out; /* نعومة الحركة */
+      background: rgba(0, 0, 0, 0.6); /* خلفية سوداء شفافة */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* يخلي الكلام في النص بالطول */
+      align-items: center;     /* يخلي الكلام في النص بالعرض */
+    }
+
+    /* لما الماوس ييجي عليها تظهر */
+    .portfolio .portfolio-content:hover .portfolio-info {
+      opacity: 1;
+    }
+
+    /* تكبير حجم الأيقونات شوية عشان تكون واضحة */
+    .portfolio .portfolio-content .portfolio-info a {
+      font-size: 24px;
+      margin: 0 8px;
+      color: #fff;
+      background: #149ddd;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    
+    .portfolio .portfolio-content .portfolio-info a:hover {
+        background: #fff;
+        color: #149ddd;
+    }
+
+    /* ============================================ */
+    /* 2. تظبيط خاص للموبايل (عشان مفيش ماوس) */
+    /* ============================================ */
+    @media (max-width: 992px) {
+      .portfolio .portfolio-content .portfolio-info {
+        opacity: 1 !important; /* نخليها ظاهرة علطول في الموبايل */
+        background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); /* تدرج لون شيك */
+        justify-content: flex-end; /* نخلي الكلام والأيقونات تحت شوية عشان الصورة تبان */
+        padding-bottom: 20px;
+      }
+      
+      .portfolio .portfolio-content .portfolio-info p {
+          display: none; /* نخفي الوصف الصغير في الموبايل عشان الزحمة */
+      }
+    }
+  </style>
+  
+
+
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
