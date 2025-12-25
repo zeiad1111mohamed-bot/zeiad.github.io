@@ -1,7 +1,7 @@
 /**
-* Template Name: DevFolio
-* Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Template Name: iPortfolio
+* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -10,37 +10,24 @@
   "use strict";
 
   /**
-   * Apply .scrolled class to the body as the page is scrolled down
+   * Header toggle
    */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  const headerToggleBtn = document.querySelector('.header-toggle');
+
+  function headerToggle() {
+    document.querySelector('#header').classList.toggle('header-show');
+    headerToggleBtn.classList.toggle('bi-list');
+    headerToggleBtn.classList.toggle('bi-x');
   }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
-  /**
-   * Mobile nav toggle
-   */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  headerToggleBtn.addEventListener('click', headerToggle);
 
   /**
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+      if (document.querySelector('.header-show')) {
+        headerToggle();
       }
     });
 
@@ -57,16 +44,6 @@
       e.stopImmediatePropagation();
     });
   });
-
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
 
   /**
    * Scroll top button
@@ -86,11 +63,13 @@
     });
   });
 
-  window.addEventListener('load', toggleScrollTop);
+  // تشغيل زر الصعود فوراً
+  toggleScrollTop();
   document.addEventListener('scroll', toggleScrollTop);
 
   /**
    * Animation on scroll function and init
+   * تعديل: خليناه يشتغل بمجرد قراءة الـ HTML عشان ميعلقش الصفحة
    */
   function aosInit() {
     AOS.init({
@@ -100,7 +79,8 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  // التعديل هنا: نستخدم DOMContentLoaded بدل window load
+  document.addEventListener('DOMContentLoaded', aosInit);
 
   /**
    * Init typed.js
@@ -119,6 +99,11 @@
   }
 
   /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
+  /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
@@ -134,11 +119,6 @@
       }
     });
   });
-
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
 
   /**
    * Initiate glightbox
@@ -181,15 +161,6 @@
   });
 
   /**
-   * Frequently Asked Questions Toggle
-   */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle').forEach((faqItem) => {
-    faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
-    });
-  });
-
-  /**
    * Init swiper sliders
    */
   function initSwiper() {
@@ -205,26 +176,8 @@
       }
     });
   }
-
-  window.addEventListener("load", initSwiper);
-
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
-  });
+  // التعديل هنا: يشتغل فوراً
+  document.addEventListener("DOMContentLoaded", initSwiper);
 
   /**
    * Navmenu Scrollspy
@@ -245,7 +198,7 @@
       }
     })
   }
-  window.addEventListener('load', navmenuScrollspy);
+  document.addEventListener('DOMContentLoaded', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
